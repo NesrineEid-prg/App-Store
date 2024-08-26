@@ -26,6 +26,8 @@ final firebaseinitializerProvider = FutureProvider<FirebaseApp>((ref) async {
   return Firebase.initializeApp();
 });
 
+// app@gmail.com
+// app123
 class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
@@ -40,14 +42,16 @@ class MyApp extends ConsumerWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: inialize.when(
-            data: (data) {
-              return const AuthChec();
-            },
-            error: (e, stackTrace) => ErrorSreen(
-                  e: e,
-                  trace: stackTrace,
-                ),
-            loading: () => const LoadingScreen()));
+        home: const SignIn()
+//          inialize.when(
+//             data: (data) {
+//               return const AuthChec();
+//             },
+//             error: (e, stackTrace) => ErrorSreen(
+//                   e: e,
+//                   trace: stackTrace,
+//                 ),
+//             loading: () => const LoadingScreen()));
+        );
   }
 }

@@ -1,17 +1,17 @@
 part of '../import_path/import_path.dart';
 
 class FakeData {
-  static List<CategoryModel> categories = [
-    CategoryModel(
+  static List<Category> categories = [
+    Category(
         name: 'contraceptivepills',
         image: 'assets/categories/contraceptivepills.png'),
-    CategoryModel(name: 'magnesium', image: 'assets/categories/magnesium.png'),
-    CategoryModel(name: 'testtube', image: 'assets/categories/testtube.png'),
-    CategoryModel(
+    Category(name: 'magnesium', image: 'assets/categories/magnesium.png'),
+    Category(name: 'testtube', image: 'assets/categories/testtube.png'),
+    Category(
         name: 'sanitarypad', image: 'assets/categories/sanitarypad.png'),
-    CategoryModel(
+    Category(
         name: 'painkiller', image: 'assets/categories/painkiller.png'),
-    CategoryModel(
+    Category(
         name: 'sanitarypad', image: 'assets/categories/sanitarypad.png'),
   ];
 
