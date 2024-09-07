@@ -42,7 +42,7 @@ class MyApp extends ConsumerWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const SignIn()
+        home: const MainPage()
 //          inialize.when(
 //             data: (data) {
 //               return const AuthChec();

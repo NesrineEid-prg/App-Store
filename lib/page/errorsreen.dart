@@ -1,21 +1,13 @@
 part of '../import_path/import_path.dart';
 
-class ErrorSreen extends StatelessWidget {
-  final Object e;
-  final StackTrace? trace;
-  const ErrorSreen({super.key, required this.e, this.trace});
+class ErrorText extends StatelessWidget {
+  String error;
+  ErrorText({super.key, required this.error});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(e.toString()),
-          Text(trace.toString()),
-        ],
-      ),
+    return Center(
+      child: (Text(error)),
     );
   }
 }

@@ -2,8 +2,12 @@ import 'package:appstore/import_path/import_path.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final categoryServicesprovider =
-    Provider((ref) => CategoryServices(fireStore: ref.watch(firebaseFirestoreProvider)));
+final categoryServicesprovider = Provider(
+    (ref) => CategoryServices(fireStore: ref.watch(firebaseFirestoreProvider)));
+final getcategorieProvider = StreamProvider((ref) {
+  final categoriesController = ref.watch(categoriesControllerProvider.notifier);
+  return categoriesController.getCategories();
+});
 
 class CategoryServices {
   final FirebaseFirestore _fireStore;

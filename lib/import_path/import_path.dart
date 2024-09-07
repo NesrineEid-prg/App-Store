@@ -1,3 +1,4 @@
+import 'package:appstore/services/categorieservice.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -29,10 +30,12 @@ part '../model/categorymodel.dart';
 part '../model/productmodel.dart';
 
 //
-part '../fake/fakedata.dart';
 part '../conpnement/homecategorieswidget.dart';
 part '../conpnement/homeproductswidget.dart';
 part '../core/faiture.dart';
 part '../constant/firebaseconstant.dart';
 part '../provider/firebaseprovider.dart';
 part '../controller/categoriecontroller.dart';
+
+part '../services/productservices.dart';
+part '../controller/productcontroller.dart';

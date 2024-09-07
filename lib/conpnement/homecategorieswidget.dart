@@ -1,46 +1,46 @@
 part of '../import_path/import_path.dart';
 
-class HomeGategoriesWidget extends StatelessWidget {
+class HomeGategoriesWidget extends ConsumerWidget {
   const HomeGategoriesWidget({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 150,
-          child: ListView.builder(
-            itemCount: FakeData.categories.length,
-            shrinkWrap: true,
-            physics: const ClampingScrollPhysics(),
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.all(8),
-                child: Column(
-                  children: [
-                    CircleAvatar(
-                      child: Image.asset(
-                        FakeData.categories[index].image!,
-                        fit: BoxFit.cover,
-                        height: 120,
-                        width: 120,
+  Widget build(BuildContext context, WidgetRef ref) {
+    return SizedBox(
+        width: double.infinity,
+        height: 100,
+        child: ref.watch(getcategorieProvider).when(
+            data: (data) => ListView.builder(
+                  itemCount: data.length,
+                  shrinkWrap: true,
+                  physics: const ClampingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Column(
+                        children: [
+                          CircleAvatar(
+                            child: Image.network(
+                              data[index].image!,
+                              scale: 1,
+                              fit: BoxFit.cover,
+                              height: 60,
+                              width: 60,
+                            ),
+                          ),
+                          Text(
+                            data[index].name!,
+                            style: const TextStyle(
+                                fontSize: 15,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
                       ),
-                    ),
-                    Text(
-                      FakeData.categories[index].name!,
-                      style: const TextStyle(
-                          fontSize: 15,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold),
-                    )
-                  ],
+                    );
+                  },
                 ),
-              );
-            },
-          ),
-        ),
-      ],
-    );
+            error: (error, stracktrace) => ErrorText(error: error.toString()),
+            loading: () => const LoadingScreen()));
   }
 }

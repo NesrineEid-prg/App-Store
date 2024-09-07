@@ -14,10 +14,7 @@ class AuthChec extends ConsumerWidget {
             return const SignIn();
           }
         },
-        error: (e, trace) => ErrorSreen(
-              e: e,
-              trace: trace,
-            ),
+        error: (error, stracktrace) => ErrorText(error: error.toString()),
         loading: () => const LoadingScreen());
   }
 }
