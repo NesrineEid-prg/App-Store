@@ -16,6 +16,7 @@ part '../page/favoritepage.dart';
 part '../page/cartpage.dart';
 part '../page/profilepage.dart';
 part '../page/homepage.dart';
+part '../page/productdetailspage.dart';
 
 // widget
 part '../widget/textformfield.dart';
@@ -29,13 +30,23 @@ part '../provider/alprovider.dart';
 part '../model/categorymodel.dart';
 part '../model/productmodel.dart';
 
-//
+//conponnent
 part '../conpnement/homecategorieswidget.dart';
 part '../conpnement/homeproductswidget.dart';
+part '../conpnement/realetedproduct.dart';
+
+//core
+
 part '../core/faiture.dart';
+//constant
+
 part '../constant/firebaseconstant.dart';
+//provider
 part '../provider/firebaseprovider.dart';
+
+//controller
+part '../controller/productcontroller.dart';
 part '../controller/categoriecontroller.dart';
+//service
 
 part '../services/productservices.dart';
-part '../controller/productcontroller.dart';

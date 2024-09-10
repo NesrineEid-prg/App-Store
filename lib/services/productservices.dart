@@ -1,13 +1,13 @@
 part of '../import_path/import_path.dart';
 
-final ProductServicesProvider = Provider((ref) {
+final productServicesProvider = Provider((ref) {
   return ProductServices(
       firebaseFirestore: ref.watch(firebaseFirestoreProvider));
 });
 
 final getproductProvider = StreamProvider((ref) {
-  final Productcontroller = ref.watch(ProductControllerProvider.notifier);
-  return Productcontroller.getProducts();
+  final productcontroller = ref.watch(productControllerProvider.notifier);
+  return productcontroller.getProducts();
 });
 
 class ProductServices {
@@ -32,5 +32,48 @@ class ProductServices {
   Stream<Productmodel> getProductById(String productId) {
     return _products.doc(productId).snapshots().map((event) =>
         Productmodel.fromMap((event.data() as Map<String, dynamic>)));
+  }
+
+  Stream<List<Productmodel>> getProductbycategry(String category) {
+    return _products
+        .where("categoryName", isEqualTo: category)
+        .snapshots()
+        .map((event) {
+      List<Productmodel> products = [];
+      for (var doc in event.docs) {
+        products.add(Productmodel.fromMap(doc.data() as Map<String, dynamic>));
+      }
+      return products;
+    });
+  }
+
+  Stream<List<Productmodel>> getRealetedProduct(String category) {
+    return _products
+        .where("categoryName", isEqualTo: category)
+        .snapshots()
+        .map((event) {
+      List<Productmodel> products = [];
+      for (var doc in event.docs) {
+        products.add(Productmodel.fromMap(doc.data() as Map<String, dynamic>));
+      }
+      return products;
+    });
+  }
+
+  Stream<List<Productmodel>> searchProduct(String search) {
+    return _products
+        .orderBy('name')
+        .startAt([search])
+        .endAt(['$search\uff8ff'])
+        .limit(10)
+        .snapshots()
+        .map((event) {
+          List<Productmodel> products = [];
+          for (var doc in event.docs) {
+            products
+                .add(Productmodel.fromMap(doc.data() as Map<String, dynamic>));
+          }
+          return products;
+        });
   }
 }

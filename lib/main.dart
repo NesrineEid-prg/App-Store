@@ -42,16 +42,15 @@ class MyApp extends ConsumerWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const MainPage()
-//          inialize.when(
-//             data: (data) {
-//               return const AuthChec();
-//             },
-//             error: (e, stackTrace) => ErrorSreen(
-//                   e: e,
-//                   trace: stackTrace,
-//                 ),
-//             loading: () => const LoadingScreen()));
-        );
+        home: const MainPage());
+    //
+    // inialize.when(
+    //     data: (data) {
+    //       return const AuthChec();
+    //     },
+    //     error: (error, stackTrace) => Directionality(
+    //         textDirection: TextDirection.rtl,
+    //         child: ErrorText(error: error.toString())),
+    //     loading: () => const LoadingScreen()));
   }
 }

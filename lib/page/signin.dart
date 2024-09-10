@@ -43,7 +43,7 @@ class _SignInState extends State<SignIn> {
                 height: 30,
               ),
               TextForm(
-                hint: 'Enter you Emsil',
+                hint: 'Enter you Email',
                 textInputType: TextInputType.emailAddress,
                 change: (value) {
                   _email = value;

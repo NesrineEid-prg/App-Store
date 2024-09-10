@@ -23,8 +23,8 @@ class HomeGategoriesWidget extends ConsumerWidget {
                             child: Image.network(
                               data[index].image!,
                               scale: 1,
-                              fit: BoxFit.cover,
-                              height: 60,
+                              fit: BoxFit.contain,
+                              height: 90,
                               width: 60,
                             ),
                           ),

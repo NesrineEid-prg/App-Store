@@ -26,8 +26,9 @@ class Homeproductswidget extends ConsumerWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        ProductDetailsPage(),
-                                        settings:RouteSettings(arguments: data[index]) ));
+                                        const ProductDetailsPage(),
+                                    settings:
+                                        RouteSettings(arguments: data[index])));
                           },
                           child: Card(
                             shape: RoundedRectangleBorder(
@@ -41,10 +42,13 @@ class Homeproductswidget extends ConsumerWidget {
                               ),
                               child: Column(
                                 children: [
+                                  const SizedBox(
+                                    height: 16,
+                                  ),
                                   Image.network(
                                     data[index].image,
                                     fit: BoxFit.contain,
-                                    height: 150,
+                                    height: 160,
                                   ),
                                   const SizedBox(
                                     height: 16,
@@ -53,7 +57,7 @@ class Homeproductswidget extends ConsumerWidget {
                                     child: Text(
                                       data[index].name,
                                       style: const TextStyle(
-                                          color: Colors.grey,
+                                          color: Colors.black54,
                                           fontWeight: FontWeight.bold,
                                           fontSize: 18),
                                     ),
@@ -61,25 +65,28 @@ class Homeproductswidget extends ConsumerWidget {
                                   const SizedBox(
                                     height: 16,
                                   ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        "\$${data[index].price}",
-                                        style: const TextStyle(
-                                            color: Colors.blue,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 18),
-                                      ),
-                                      Text("\$${data[index].oldPrice}",
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          "\$${data[index].price}",
                                           style: const TextStyle(
-                                              color: Colors.red,
+                                              color: Colors.blue,
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 18,
-                                              decoration:
-                                                  TextDecoration.lineThrough)),
-                                    ],
+                                              fontSize: 20),
+                                        ),
+                                        Text("\$${data[index].oldPrice}",
+                                            style: const TextStyle(
+                                                color: Colors.red,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 20,
+                                                decoration: TextDecoration
+                                                    .lineThrough)),
+                                      ],
+                                    ),
                                   ),
                                   const SizedBox(
                                     height: 16,
