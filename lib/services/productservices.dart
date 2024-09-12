@@ -34,9 +34,9 @@ class ProductServices {
         Productmodel.fromMap((event.data() as Map<String, dynamic>)));
   }
 
-  Stream<List<Productmodel>> getProductbycategry(String category) {
+  Stream<List<Productmodel>> getProductbycategry(String categoryName) {
     return _products
-        .where("categoryName", isEqualTo: category)
+        .where("categoryName", isEqualTo: categoryName)
         .snapshots()
         .map((event) {
       List<Productmodel> products = [];

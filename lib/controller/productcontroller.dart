@@ -17,6 +17,10 @@ final getProductbycategry = StreamProviderFamily((ref, String categoryname) {
       .getRealetedProductprovider(categoryname);
 });
 
+final getsearchProductProvider = StreamProviderFamily((ref, String search) {
+  return ref.watch(productControllerProvider.notifier).searchProduct(search);
+});
+
 class Productcontroller extends StateNotifier<bool> {
   final ProductServices _productServices;
   final Ref _ref;

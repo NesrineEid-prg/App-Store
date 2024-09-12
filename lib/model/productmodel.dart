@@ -2,8 +2,8 @@ part of '../import_path/import_path.dart';
 
 class Productmodel {
   String? productId;
-  String name;
-  String image;
+  String ?name;
+  String? image;
   num? price;
   num? oldPrice;
   bool? isavaible;
@@ -15,7 +15,7 @@ class Productmodel {
       required this.name,
       required this.image,
       required this.price,
-      this.isavaible,
+   required   this.isavaible,
       required this.oldPrice,
       this.description,
       required this.productId});

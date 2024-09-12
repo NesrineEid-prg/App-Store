@@ -1,34 +1,54 @@
 part of '../import_path/import_path.dart';
 
-class MainPage extends StatefulWidget {
+class MainPage extends ConsumerWidget {
   const MainPage({super.key});
 
   @override
-  State<MainPage> createState() => _MainPageState();
-}
-
-class _MainPageState extends State<MainPage> {
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Scaffold(
+        // appBar: AppBar(
+        //   elevation: 0,
+        //   actions: [
+        //     GestureDetector(
+        //       onTap: () {
+        //         showSearch(context: context, delegate: SearchProduct(ref: ref));
+        //       },
+        //       child: const Padding(
+        //         padding: EdgeInsets.all(8.0),
+        //         child: Icon(
+        //           Icons.search,
+        //           size: 25,
+        //           color: Colors.black,
+        //         ),
+        //       ),
+        //     ),
+        //   ],
+        // ),
         body: SafeArea(
       child: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Card(
               elevation: 1,
               child: SizedBox(
                 child: Padding(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: TextForm(
                     hint: 'Seach Product',
-                    prefixIcon: Icon(
-                      Icons.search,
-                      size: 22,
-                      color: Colors.black,
+                    prefixIcon: GestureDetector(
+                      onTap: () {
+                        showSearch(
+                            context: context,
+                            delegate: SearchProduct(ref: ref));
+                      },
+                      child: const Icon(
+                        Icons.search,
+                        size: 22,
+                        color: Colors.black,
+                      ),
                     ),
-                    suffixIcon: Icon(
+                    suffixIcon: const Icon(
                       Icons.tune,
                       size: 22,
                       color: Colors.black,
@@ -37,11 +57,11 @@ class _MainPageState extends State<MainPage> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 22,
             ),
-            HomeGategoriesWidget(),
-            Padding(
+            const HomeGategoriesWidget(),
+            const Padding(
               padding: EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -63,7 +83,7 @@ class _MainPageState extends State<MainPage> {
                 ],
               ),
             ),
-            Homeproductswidget(),
+            const Homeproductswidget(),
           ],
         ),
       ),

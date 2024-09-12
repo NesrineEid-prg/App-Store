@@ -45,7 +45,7 @@ class RealetedProductWidget extends ConsumerWidget {
                                 height: 16,
                               ),
                               Image.network(
-                                data[index].image,
+                                data[index].image!,
                                 fit: BoxFit.contain,
                                 height: 160,
                               ),
@@ -54,7 +54,7 @@ class RealetedProductWidget extends ConsumerWidget {
                               ),
                               Center(
                                 child: Text(
-                                  data[index].name,
+                                  data[index].name!,
                                   style: const TextStyle(
                                       color: Colors.black54,
                                       fontWeight: FontWeight.bold,

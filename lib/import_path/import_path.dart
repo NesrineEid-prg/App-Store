@@ -16,6 +16,7 @@ part '../page/favoritepage.dart';
 part '../page/cartpage.dart';
 part '../page/profilepage.dart';
 part '../page/homepage.dart';
+part '../page/productbycategoriewidget.dart';
 part '../page/productdetailspage.dart';
 
 // widget
@@ -34,6 +35,7 @@ part '../model/productmodel.dart';
 part '../conpnement/homecategorieswidget.dart';
 part '../conpnement/homeproductswidget.dart';
 part '../conpnement/realetedproduct.dart';
+part '../conpnement/searchproductwidget.dart';
 
 //core
 

@@ -17,25 +17,35 @@ class HomeGategoriesWidget extends ConsumerWidget {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.all(8),
-                      child: Column(
-                        children: [
-                          CircleAvatar(
-                            child: Image.network(
-                              data[index].image!,
-                              scale: 1,
-                              fit: BoxFit.contain,
-                              height: 90,
-                              width: 60,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ProductByCategoriePage(
+                                      categoryName:
+                                          data[index].name.toString())));
+                        },
+                        child: Column(
+                          children: [
+                            CircleAvatar(
+                              child: Image.network(
+                                data[index].image!,
+                                scale: 1,
+                                fit: BoxFit.contain,
+                                height: 90,
+                                width: 60,
+                              ),
                             ),
-                          ),
-                          Text(
-                            data[index].name!,
-                            style: const TextStyle(
-                                fontSize: 15,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
-                          )
-                        ],
+                            Text(
+                              data[index].name!,
+                              style: const TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        ),
                       ),
                     );
                   },

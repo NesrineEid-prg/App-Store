@@ -16,7 +16,7 @@ class ProductDetailsPage extends StatelessWidget {
               Stack(
                 children: [
                   Image.network(
-                    product.image,
+                    product.image!,
                     height: 350,
                     width: double.infinity,
                     fit: BoxFit.contain,
@@ -56,7 +56,7 @@ class ProductDetailsPage extends StatelessWidget {
               const SizedBox(height: 20),
               Center(
                 child: Text(
-                  product.name,
+                  product.name!,
                   style: const TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
